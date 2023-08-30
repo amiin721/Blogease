@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "11e15632-1032-409a-807a-87a949658df6",
+		"name": "Blogging-APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29400244"
+	},
+	"item": [
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8088/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Aminnn\",\r\n        \"email\": \"amin12@gmma.com\",\r\n        \"password\": \"Mr.m@1234\",\r\n        \"about\": \"dev\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8088/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"name\",\r\n        \"email\": \"amin@123.com\",\r\n        \"password\": \"8374yksdf\",\r\n        \"about\": \"dev\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8088/users/102"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8088/users/102"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "verbose eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbWluMTJAZ21tYS5jb20iLCJpYXQiOjE2OTMzNzg4MjUsImV4cCI6MTY5MzM5NjgyNX0.JblXbTxkWqWGx1D2-QhmlL0PTCGra-t9bcZdcxFJWuHjJQBiNUXR-iGyEdKiZNqHqiNCR4WHcc-C53tI6nW2eA",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8088/users/52"
+			},
+			"response": []
+		},
+		{
+			"name": "Create category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryTitle\":\"Development\",\r\n    \"categoryDescription\":\"Related to development\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8088/categories/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8088/categories/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get category by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8088/categories/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Update category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoryTitle\":\"changed\",\r\n    \"categoryDescription\":\"Related to development\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8088/categories/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8088/categories/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postTitle\":\"second\",\r\n    \"postContent\":\"no one is good\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8088/user/1/category/1/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get posts by user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8088/user/1/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get posts by category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8088/category/2/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get posts by user and category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8088/user/52/category/2/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all posts (paged results)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "verbose eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbWluMTJAaGVsbG8uY29tIiwiaWF0IjoxNjkzMzkwNzk4LCJleHAiOjE2OTM0MDg3OTh9.G4tySqFwNC-jDgsLUVvmCxVY3G8T3ba4MbdROwHD2bWrI-l4g0XM3WhgKb2-XZARcZx3bQtzqi9rnW87KyFJCg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8088/posts?pageSize=5&pageNumber=0&sortBy=postId&sortDirection=descending",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "5"
+						},
+						{
+							"key": "pageNumber",
+							"value": "0"
+						},
+						{
+							"key": "sortBy",
+							"value": "postId"
+						},
+						{
+							"key": "sortDirection",
+							"value": "descending"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get post by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8088/posts/102"
+			},
+			"response": []
+		},
+		{
+			"name": "Update post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postTitle\":\"updated\",\r\n    \"postContent\":\"Content is good\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8088/posts/102"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8088/posts/102"
+			},
+			"response": []
+		},
+		{
+			"name": "Search posts by title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8088/posts/search/title/kafsd"
+			},
+			"response": []
+		},
+		{
+			"name": "Create comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\":\"nice post\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8088/user/4/posts/1/comments"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8088/comments/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"amin12@gmma.com\",\r\n    \"password\":\"Mr.m@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8088/auth/login"
+			},
+			"response": []
+		}
+	]
+}
